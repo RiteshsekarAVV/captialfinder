@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Countries and Capitals</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Countries and Capitals</h1>
+    <h3>Select the Country to find its captial</h3>
+	
+    
+	<form>
+		<label for="country">Select a Country:</label>
+		<select id="country" name="country">
+			<option value="">Select a Country</option>
+			<option value="India">India</option>
+			<option value="Italy">Italy</option>
+			<option value="Australia">Australia</option>
+			<option value="Brazil">Brazil</option>
+			<option value="China">China</option>
+		</select>
+		<p id="capital"></p>
+	</form>
+
+	<script>
+		const countrySelect = document.getElementById("country");
+		const capitalDisplay = document.getElementById("capital");
+
+		countrySelect.addEventListener("change", function() {
+			const country = countrySelect.value;
+			let capital,flag;
+
+			switch (country) {
+				case "India":
+					capital = "New Delhi";
+					break;
+				case "Italy":
+					capital = "Rome";
+					
+					break;
+				case "Australia":
+					capital = "Canberra";
+					break;
+				case "Brazil":
+					capital = "Brasília";
+					break;
+				case "China":
+					capital = "Beijing";
+					break;
+				default:
+					capital = "";
+			}
+
+			capitalDisplay.textContent = `The capital of ${country} is ${capital}.`;
+            
+		});
+	</script>
+</body>
+<footer>
+	<span>MADE BY RITESH &hearts;</span>
+</footer>
+</html>
